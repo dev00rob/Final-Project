@@ -10,6 +10,7 @@ import { SearchComponent } from './search/search.component';
 
 import { routes } from './app.router';
 import { ResultsComponent } from './results/results.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ResultsComponent } from './results/results.component';
   imports: [
     BrowserModule,
     ClarityModule,
-    routes
+    routes,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
