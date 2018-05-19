@@ -1,4 +1,6 @@
 .head {
+    height: 15%;
     background-color: dodgerblue;
     color: peru;
+    display: flex;
 }
