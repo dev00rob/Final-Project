@@ -6,17 +6,22 @@ import { ClarityModule } from '@clr/angular';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HeadComponent } from './head/head.component';
+import { SearchComponent } from './search/search.component';
+
+import { routes } from './app.router';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HeadComponent
+    HeadComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
-    ClarityModule
+    ClarityModule,
+    routes
   ],
   providers: [],
   bootstrap: [AppComponent]

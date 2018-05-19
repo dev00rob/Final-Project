@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./head.component.css']
 })
 export class HeadComponent implements OnInit {
+  
+  title = 'Rob\'s movie database search app';
 
   constructor() { }
 
