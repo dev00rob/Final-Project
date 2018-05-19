@@ -9,6 +9,7 @@ import { HeadComponent } from './head/head.component';
 import { SearchComponent } from './search/search.component';
 
 import { routes } from './app.router';
+import { ResultsComponent } from './results/results.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { routes } from './app.router';
     AppComponent,
     LoginComponent,
     HeadComponent,
-    SearchComponent
+    SearchComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,
