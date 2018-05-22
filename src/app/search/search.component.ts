@@ -10,12 +10,16 @@ import { SearchMoviesService } from '../search-movies.service';
 })
 export class SearchComponent implements OnInit {
 
+  data;
+  
   constructor(private _movies: SearchMoviesService) { }
 
   getMovie() {
     this._movies.getData()
-      .subscribe( res => 
-        console.log('res', res);
+      .subscribe( res => {
+        this.data = res.results;
+        console.log('Works', this.data);
+        }
       )
   }
   
