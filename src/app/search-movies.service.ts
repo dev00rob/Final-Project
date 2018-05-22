@@ -23,7 +23,7 @@ export class SearchMoviesService {
     constructor(private http: HttpClient) { }
     
     getData (){
-        results: any = this.http.get(this.urlBase + this.urlApiKey + this.urlQuery + this.urlMovie);
+        let results:any = this.http.get(this.urlBase + this.urlApiKey + this.urlQuery + this.urlMovie);
         console.log(results);
         return results;
     }

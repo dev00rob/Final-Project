@@ -10,8 +10,15 @@ import { SearchMoviesService } from '../search-movies.service';
 })
 export class SearchComponent implements OnInit {
 
-  constructor(private searchMoviesService: SearchMoviesService) { }
+  constructor(private _movies: SearchMoviesService) { }
 
+  getMovie() {
+    this._movies.getData()
+      .subscribe( res => 
+        console.log('res', res);
+      )
+  }
+  
   ngOnInit() {
   }
 

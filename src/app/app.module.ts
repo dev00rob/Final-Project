@@ -12,6 +12,9 @@ import { routes } from './app.router';
 import { ResultsComponent } from './results/results.component';
 import { HttpClientModule } from '@angular/common/http';
 
+import { FormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     ClarityModule,
     routes,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,10 +7,10 @@
     <form novalidate="">
         <div>
             <div>
-                <input name="searchString" placeholder="Search for movies..." type="text" >
+                <input [(ngModel)]="_movies.urlMovie" name="searchString" placeholder="Search for movies..." type="text" >
                 
                 <span >
-                    <button (click)="getData()" type="button">Search!</button>
+                    <button (click)="getMovie()" type="button">Search!</button>
                 </span>
                 
             </div>
