@@ -3,84 +3,38 @@
     <form novalidate="">
         <div>
             <div>
-                <input [(ngModel)]="_movies.urlMovie" 
-                       name="searchString" 
-                       placeholder="Search for movies..." 
-                       type="text" >
-                
-                <span>
-                    <button (click)="getMovie()" 
-                            type="button"
-                            >Search!</button>
-                </span>
-                
+                <input [(ngModel)]="_movies.urlMovie" name="searchString" placeholder="Search for movies..." type="text" >
+                <button (click)="getMovie()" type="button">Search!</button>
             </div>
             
-            <p>***** Results below ******</p>
-            
-            <div *ngIf="data">
-                <!--<article *ngFor="let movie of data">-->
-                <!--    <p>{{movie.original_title}}</p>-->
-                <!--    <p>{{movie.release_date}}</p>-->
-                <!--    <p>{{movie.overview}}</p>-->
-                <!--</article>-->
-
-            
-    <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12" *ngFor="let movie of data">
-        <div class="card">
-            <div class="card-header">
-                {{movie.original_title}}
-            </div>
-            <div class="card-block">
-                <div class="card-media-block">
-                    <img *ngIf="movie.poster_path" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" class="card-media-image">
-                    <div class="card-media-description">
-                        <span class="card-media-title">
-                            Project A
-                        </span>
-                        <span class="card-media-text">
-                            Release: {{movie.release_date}}
-                        </span>
+            <div *ngIf="data.results">
+                <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12" *ngFor="let movie of data.results">
+                    <div class="card">
+                        <div class="card-header">
+                            {{movie.original_title}}
+                        </div>
+                        <div class="card-block">
+                            <div class="card-media-block">
+                                <img *ngIf="movie.poster_path" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" class="card-media-image">
+                                <div class="card-media-description">
+                                    <span class="card-media-title">
+                                        Title: {{movie.original_title}}
+                                    </span>
+                                    <span class="card-media-text">
+                                        Release: {{movie.release_date}}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="card-text">
+                                {{movie.overview}}
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-sm btn-link">Action</button>
+                        </div>
                     </div>
                 </div>
-                <div class="card-text">
-                    {{movie.overview}}
-                </div>
-            </div>
-            <div class="card-footer">
-                <button class="btn btn-sm btn-link">Action</button>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-        <div class="card">
-            <div class="card-header">
-                Header
-            </div>
-            <div class="card-block">
-                <div class="card-media-block wrap">
-                    <img src="..." class="card-media-image">
-                    <div class="card-media-description">
-                        <span class="card-media-title">
-                            Project B
-                        </span>
-                        <span class="card-media-text">
-                            Owner: Jane Doe
-                        </span>
-                    </div>
-                </div>
-                <div class="card-text">
-                    ...
-                </div>
-            </div>
-            <div class="card-footer">
-                <button class="btn btn-sm btn-link">Action</button>
-            </div>
-        </div>
-    </div>
-</div>   
-            
-            <p>***** Results above ******</p>
+            </div>   
             
         </div>
     </form>

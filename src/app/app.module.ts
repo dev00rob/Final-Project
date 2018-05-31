@@ -13,7 +13,8 @@ import { ResultsComponent } from './results/results.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
-
+import { RegisterComponent } from './register/register.component';
+import { UserService } from './user.service';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     HeadComponent,
     SearchComponent,
-    ResultsComponent
+    ResultsComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

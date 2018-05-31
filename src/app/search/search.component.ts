@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { SearchMoviesService } from '../search-movies.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-search',
@@ -10,15 +11,15 @@ import { SearchMoviesService } from '../search-movies.service';
 })
 export class SearchComponent implements OnInit {
 
-  data;
+  data = {};
   
-  constructor(private _movies: SearchMoviesService) { }
+  constructor(private _movies: SearchMoviesService, private _user: UserService) { }
 
   getMovie() {
     this._movies.getData()
       .subscribe( res => {
-        this.data = res.results;
-        console.log('Works', this.data);
+        this.data = res;   // this gives an Object error
+        console.log('src/app/search.component: getMovie() works', this.data);
         }
       )
   }

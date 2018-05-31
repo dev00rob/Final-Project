@@ -1,9 +1,19 @@
 <div class="head" >
   
   <div class="main">
-    <h1>Welcome to {{ title }}!</h1>
+    <h1>Welcome to Rob's Movie Search App!</h1>
     <br><br>
-    <a routerLink="login" >Login</a><br>
+    
+    <div *ngIf="_user.userRes; else #login">
+      <!--<h4 *ngIf="_user.userRes">Hello {{_user.userRes.firstName}}!</h4>-->
+      <h4>Hello {{_user.userRes.firstName}}!</h4>
+      <a routerLink="login" >Log Out</a>
+    </div>
+    <ng-template #login>
+      <a routerLink="login" >Log In</a>
+    </ng-template>
+    
+    <!--<a routerLink="login" >Login</a><br>-->
     <a routerLink="search" >Search</a><br>
     <br><br>
   </div>

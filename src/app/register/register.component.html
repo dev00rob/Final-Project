@@ -1,0 +1,15 @@
+<div class="login-wrapper">
+    <form class="login">
+        <label class="title">
+            <h3 class="welcome">Welcome to</h3>
+            Rob's Awesome app
+        </label>
+        <div class="login-group">
+            <input [(ngModel)]="user.firstName" class="username" type="text" id="login_firstname" placeholder="firstName" [ngModelOptions]="{standalone: true}">
+            <input [(ngModel)]="user.lastName" class="username" type="text" id="login_lastname" placeholder="lastName" [ngModelOptions]="{standalone: true}">
+            <input [(ngModel)]="user.email" class="username" type="email" id="login_email" placeholder="email" [ngModelOptions]="{standalone: true}">
+            <input [(ngModel)]="user.password" class="password" type="password" id="login_password" placeholder="Password" [ngModelOptions]="{standalone: true}">
+            <button (click)="doRegister()" type="submit" class="btn btn-primary">Register</button>
+        </div>
+    </form>
+</div>

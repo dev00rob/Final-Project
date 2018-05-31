@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-head',
@@ -7,11 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeadComponent implements OnInit {
   
-  title = 'Rob\'s Movie Search App';
+  
+  
+  userName = 'Rob';
 
-  constructor() { }
+  constructor(private _user: UserService) { 
+  }
 
   ngOnInit() {
+    if(this._user && this._user.userID){
+      console.log('This has a userID');
+    }
   }
 
 }

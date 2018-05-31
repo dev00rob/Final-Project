@@ -8,13 +8,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 
 // Step 3 Setup the Routes
 export const router: Routes = [
     { path: '', redirectTo: '', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
-    { path: 'search', component: SearchComponent }
+    { path: 'search', component: SearchComponent },
+    { path: 'register', component: RegisterComponent }
 ];
 
 // Step 4 -Tell angular to use this router
