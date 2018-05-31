@@ -6,8 +6,11 @@ export class UserService {
 
   constructor(private _http: HttpClient) { }
   
-  baseUrl: string = 'http://rob-spring-2018-phortonssf.c9users.io:8080/api/appUsers/';
-  loginURL: string = baseUrl+"login";
+  // console.log("heyooo");
+  baseball: string = "Babe Ruth";
+  baseUrl: string = "http://rob-spring-2018-phortonssf.c9users.io:8080/api/appUsers/";
+  // loginURL: string = baseUrl+"login";
+  loginURL: string = "http://rob-spring-2018-phortonssf.c9users.io:8080/api/appUsers/login";
   
   // regURL: string = 'http://rob-spring-2018-phortonssf.c9users.io:8080/api/appUsers';
   // userQueryURL: string = "http://rob-spring-2018-phortonssf.c9users.io:8080/api/appUsers/";
@@ -16,11 +19,11 @@ export class UserService {
   userRes;
 
   register(user){
-    return this._http.post(this.regURL, user)
+    return this._http.post(this.regURL, user);
   }
 
   login(user){
-    return this._http.post(this.loginURL, user)
+    return this._http.post(this.loginURL, user);
   }
 
   queryUser(){
@@ -29,7 +32,7 @@ export class UserService {
     //;http://rob-spring-2018-phortonssf.c9users.io:8080/api/appUsers/5b0f65d7665821c04e9171c7
     return this._http.get(this.baseUrl+this.userID).subscribe(
       res => {
-        console.log('user data', res)
+        console.log('user data', res);
         this.userRes = res;
       }
     );
