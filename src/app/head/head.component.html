@@ -4,7 +4,7 @@
     <h1>Welcome to Rob's Movie Search App!</h1>
     <br><br>
     
-    <div *ngIf="_user.userRes; else #login">
+    <div *ngIf="_user.userRes; else login">
       <!--<h4 *ngIf="_user.userRes">Hello {{_user.userRes.firstName}}!</h4>-->
       <h4>Hello {{_user.userRes.firstName}}!</h4>
       <a routerLink="login" >Log Out</a>

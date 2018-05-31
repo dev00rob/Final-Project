@@ -6,9 +6,11 @@ export class UserService {
 
   constructor(private _http: HttpClient) { }
   
-  regURL: string = 'http://rob-spring-2018-phortonssf.c9users.io:8080/api/appUsers';
-  loginURL: string = "http://rob-spring-2018-phortonssf.c9users.io:8080/api/appUsers/login";
-  userQueryURL: string = "http://rob-spring-2018-phortonssf.c9users.io:8080/api/appUsers/";
+  baseUrl: string = 'http://rob-spring-2018-phortonssf.c9users.io:8080/api/appUsers/';
+  loginURL: string = baseUrl+"login";
+  
+  // regURL: string = 'http://rob-spring-2018-phortonssf.c9users.io:8080/api/appUsers';
+  // userQueryURL: string = "http://rob-spring-2018-phortonssf.c9users.io:8080/api/appUsers/";
   
   userID;
   userRes;
@@ -24,7 +26,8 @@ export class UserService {
   queryUser(){
     this.userID = sessionStorage.getItem('userId');
     console.log('This user\'s userID', this.userID);
-    return this._http.get(this.userQueryURL+this.userID).subscribe(
+    //;http://rob-spring-2018-phortonssf.c9users.io:8080/api/appUsers/5b0f65d7665821c04e9171c7
+    return this._http.get(this.baseUrl+this.userID).subscribe(
       res => {
         console.log('user data', res)
         this.userRes = res;
